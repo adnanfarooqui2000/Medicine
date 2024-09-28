@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agar Tha Market</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+
+        body{
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+        }
+          .bg-green {
+            background-color: #1a68c7; /* or any other shade of green */
+        }
+        .col-sm-8 a {
+            color: white;
+            text-decoration: none;
+        }
+        .d-flex ul li a {
+            color: white;
+            padding-right: 2px;
+            line-height: 1.6;
+        }
+        .d-flex {
+            margin-top: 5px;
+        }
+        .logo {
+            width: 185px;
+            height: 90px;
+        }
+        .slider-banner {
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+        }
+        .slider-banner h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .slider-banner span {
+            font-size: 1.25rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .banner {
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .banner p {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .slider {
+            position: relative;
+            overflow: hidden;
+        }
+        .slider-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .slider-controls button {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+        }
+           /* nav bar */
+        /* Navbar */
+.navbar {
+    background-color: #ffffff;
+}
+
+/* .navbar .navbar-brand img.logo {
+    height: 40px;  Adjust as needed 
+}
+    */
+
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form .form-control {
+    width: 200px; /* Adjust width as needed */
+    border-radius: 20px 0 0 20px; /* Rounded corners for input */
+    border-right: none; /* Remove right border */
+}
+
+.search-form .btn {
+    border-radius: 0 20px 20px 0; /* Rounded corners for button */
+    border-left: none; /* Remove left border */
+    background-color: #007bff; /* Green background */
+    color: #fff; /* White text */
+}
+
+.search-form .btn:hover {
+    background-color: #007bff; /* Darker green on hover */
+    color: #fff; /* White text */
+}
+
+@media (max-width: 767.98px) {
+    .search-form .form-control {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 20px; /* Reset rounded corners */
+    }
+
+    .search-form .btn {
+        width: 100%;
+        border-radius: 20px; /* Reset rounded corners */
+    }
+}
+/* slider */
+.h3 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides {
+            display: flex;
+        }
+
+        .slide {
+            min-width: 200px;
+            max-width: 200px;
+            margin: 0 10px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .slide img {
+            width: 80%;
+            height: 80%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .slide span {
+            display: block;
+            font-size: 14px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .slide:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .arrow-prev {
+            left: 10px;
+        }
+
+        .arrow-next {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                min-width: 120px;
+                max-width: 120px;
+            }
+
+            .arrow {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .slide {
+                min-width: 100px;
+                max-width: 100px;
+            }
+
+            .arrow {
+                padding: 6px;
+            }
+        }
+/* info box */
+
+        .info-boxes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .info-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+/* parallax active */
+.parallax-active {
+            position: relative;
+            overflow: hidden;
+            height: 363px; /* Adjust height as needed */
+            background: #000;
+        }
+        .parallax-active .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+            transition: transform 0.5s ease-out;
+        }
+        .parallax-active .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .carousel-caption {
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            width: 100%;
+            z-index: 2;
+            padding: 20px;
+        }
+        .carousel-caption h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            animation: fadeInUp 1s ease-in-out;
+            line-height: 1.2;
+        }
+        .carousel-caption .date-time-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 20px 0;
+            animation: fadeInUp 2s ease-in-out;
+        }
+        .date-time-block {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 5px 10px;
+            border-radius: 8px;
+            animation: slideIn 1s ease-in-out;
+            text-align: center;
+            width: 80px; /* Adjust width as needed */
+        }
+        .date-time-block p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .carousel-caption .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: fadeInUp 1s ease-in-out 1s;
+        }
+        .carousel-caption .btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+   /* Footer Styling */
+   .footer {
+            background-color: #f8f9fa; /* Light background for the footer */
+            padding: 20px 0; /* Padding for top and bottom */
+        }
+
+        .footer .footer-section {
+            margin-bottom: 15px; /* Space between items */
+            text-align: left; /* Left-align text within each item */
+        }
+
+        .footer .footer-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* Space between items */
+        }
+
+        .footer .footer-item img {
+            width: 50px; /* Set width for images */
+            height: 50px; /* Set height for images */
+            margin-right: 10px; /* Space between image and text */
+        }
+
+        .footer .footer-item span {
+            display: block; /* Ensure each span is a block element */
+            font-size: 12px; /* Adjust font size */
+            color: #333; /* Text color */
+        }
+
+        .footer h4 {
+            font-size: 16px; /* Font size for section headings */
+            margin-bottom: 15px; /* Space below headings */
+        }
+
+        .footer a {
+            color: #333; /* Color for links */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        .footer a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+
+/* Bottom Footer Styling */
+.bottom-footer {
+            background-color: #5b5b5b; /* Dark background for the bottom footer */
+            color: #fff; /* White text color */
+            padding: 10px 0; /* Padding for top and bottom */
+            text-align: center; /* Center-align text */
+        }
+
+        .bottom-footer a {
+            color: #000;
+            margin: 0 10px; /* Space between links */
+            text-decoration: none; /* Remove underline from links */
+            display: inline-block;
+        }
+
+        .bottom-footer a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+.footer-text{
+    color: #787878;
+}
+        
+</style>
+</head>
+<body>
+    <div class="container-fluid bg-green">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 ">
+                    <a href="mailto:info@agarthamarket.com" target="_blank" style="color: white;">info@agarthamarket.com</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-end">
+                        <ul class="list-unstyled d-flex">
+                            <li><a class="nav-link" href="#">About</a></li>
+                            <li><a class="nav-link" href="#">Blog</a></li>
+                            <li><a class="nav-link" href="#">Contact</a></li>
+                            <li><a class="nav-link" href="#">FAQ</a></li>
+                            <li><a class="nav-link" href="#"><i class="fas fa-user"></i></a></li>
+                            <li><a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="https://agarthamarket.com/wp-content/uploads/2023/07/agartha.png" alt="Agar Tha Market">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SHOP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">BLOG</a>
+                    </li>
+                </ul>
+                <form class="d-flex search-form">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid info-section bg-light py-3">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2016/08/dummy-1-300x195.jpg" alt="Secure Delivery" style="width: 30px; height:30px;">
+                    <span>100% Secure Delivery World Wide*</span>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2016/08/dummy-1-300x195.jpg" alt="Loved by Customers" style="width: 30px; height:30px;">
+                    <span>Loved by our Customers. 900+ Reviews</span>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2016/08/dummy-1-300x195.jpg" alt="Free Returns & Shipping" style="width: 30px; height:30px;">
+                    <span>Free Returns & Free Shipping By USPS, DHL, FedEx From China & United States</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 mt-2">
+                    <div class="slider">
+                        <div class="slider-inner">
+                            <div class="slider-item">
+                                <div class="slider-banner" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQioK1IqVMCRvarlMd2DbX0p-nz0VGFi69iOXTwrm44SiTZFzSfPCsKUcqePko81XAnqrI&usqp=CAU');">
+                                    <span>Wholesale Meds & chemicals</span>
+                                    <h1>AGAR THA MARKET</h1>
+                                    <a href="#" class="button">BROWSE NOW</a>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="slider-banner" style="background-image: url('https://2.imimg.com/data2/MB/HY/MY-2555987/sodium-chloride-salt-500x500.jpg');">
+                                    <span>A cool top header</span>
+                                    <h1>BEST RESEARCH CHEMICALS<br> CHEAP PRICES ONLINE</h1>
+                                    <a href="#" class="button">BROWSE NOW</a>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="slider-banner" style="background-image: url('https://5.imimg.com/data5/SELLER/Default/2021/3/XI/PW/KO/25972830/caustic-soda-solids-500x500.jpg');">
+                                    <h1>TOP QUALITY RESEARCH <br>CHEMICALS ONLINE</h1>
+                                    <span>Where to buy best quality research <br>chemicals and pills online with 100% delivery quality. Quality is our secret</span>
+                                    <a href="#" class="button">BROWSE NOW</a>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="slider-banner" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMpJ0QBjterU_niU3vHIG1RM5BZLUkKGGwyA&s');">
+                                    <span>Welcome to  Agar Tha Market</span>
+                                    <h1>TOP QUALITY GENUINE<br>RESEARCH<br> CHEMICALS AND PILLS</h1>
+                                    <a href="#" class="button">BROWSE NOW</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-controls">
+                            <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                            <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mt-2">
+                    <div class="side-banner d-flex flex-column gap-3">
+                        <div class="banner" style="background-image: url('https://5.imimg.com/data5/SELLER/Default/2021/6/SF/ID/NM/16526614/allopathic-medicine-500x500.jpg'); height: 200px;">
+                            <div class="banner-content">
+                                <p>SUMMER SALE</p>
+                                <a href="#" class="button">BROWSE NOW</a>
+                            </div>
+                        </div>
+                        <div class="banner" style="background-image: url('https://www.bluewaterresearch.in/public/Blogs/1704708674.jpg'); height: 200px;">
+                            <div class="banner-content">
+                                <p>SALE ENDS SOON</p>
+                                
+                                <a href="#" class="button">BROWSE NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container col-sm-8 mt-4">
+        <h3>OUR BESTSELLERS</h3>
+        <div class="slider-container">
+            <div class="slider" id="slider1">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="https://agarthamarket.com/wp-content/uploads/2021/01/1-1-600x400-1-150x223.jpg" alt="ANTI ANXIETY">
+                        <span>Pentobarbital-Natrium (Oral and Injection)<br>$299.00-$1,150.00</span>
+                    </div>
+                    <div class="slide">
+                        <img src="https://agarthamarket.com/wp-content/uploads/2021/01/LSD-blotter-for-sale-Lysergic-Acid-Diethylamide-150x155.png" alt="PAINKILLERS">
+                        <span>LSD Blotter (Lysergic Acid Diethylamide)<br>$299.00-$999.00</span>
+                    </div>
+                    <div class="slide">
+                        <img src="https://agarthamarket.com/wp-content/uploads/2023/10/phendimetrazine-1-150x214.png" alt="WEIGHT LOSS">
+                        <span>Phendimetrazine Tartrate 35mg, 105mg x 100 units per package<br>$126.90-$198.40</span>
+                    </div>
+                    <div class="slide">
+                        <img src="https://agarthamarket.com/wp-content/uploads/2020/12/apvp-crystals-1-150x118.jpg" alt="RESEARCH CHEMICALS">
+                        <span>A-PVP for sale<br>$0.00-$2,100.00</span>
+                    </div>
+                    <div class="slide">
+                        <img src="https://agarthamarket.com/wp-content/uploads/2023/10/kinz-nalbuphine-1-150x214.png" alt="PAINKILLERS">
+                        <span>Kinz (Nalbuphine) injections 30 vials per package<br>$104.20-$119.80</span>
+                    </div>
+                    <div class="slide">
+                        <img src="https://agarthamarket.com/wp-content/uploads/2023/10/sibutramine-meridia-1-150x214.png" alt="WEIGHT LOSS">
+                        <span>Sibutramine (Meridia) 98 capsules per package<br>$127.40-$175.50</span>
+                    </div>
+                    <div class="slide">
+                        <img src="https://agarthamarket.com/wp-content/uploads/2020/12/PERCOCET-5MG-Acetaminophen-150x201.jpg" alt="PAINKILLERS">
+                        <span>PERCOCET 5MG (Acetaminophen)<br>$250.00-$3,200.00</span>
+                    </div>
+                    <div class="slide">
+                        <img src="https://agarthamarket.com/wp-content/uploads/2023/10/Buy-Alpha-pvp-A-pvp-Online-150x100.jpg" alt="RESEARCH CHEMICALS">
+                        <span>Alpha PVP (A-PVP)<br>$15.00</span>
+                    </div>
+                </div>
+                <button class="arrow arrow-prev" aria-label="Previous Slide" onclick="prevSlide('slider1')">❮</button>
+                <button class="arrow arrow-next" aria-label="Next Slide" onclick="nextSlide('slider1')">❯</button>
+            </div>
+        </div>
+    </div>
+ <!-- Info Boxes -->
+                <div class="container-fluid">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-sm-12 mt-2">
+                                <h3>AGAR THA MARKET – PILLS & Chemicals FOR SALE</h3>
+                                <div class="info-boxes">
+                                    <div class="info-box">
+                                        <h4>FREE SHIPPING</h4>
+                                        <p>We offer Free Shipping on all orders over $500, and can include a 10% discount when an order has been approved. This will depend on your location.</p>
+                                    </div>
+                                    <div class="info-box">
+                                        <h4>CUSTOMER SUPPORT</h4>
+                                        <p>Our customer is ready 24/7 to attend to your immediate issues through our SECURED online chat system. We hope to have you satisfied at all levels.</p>
+                                    </div>
+                                    <div class="info-box">
+                                        <h4>MONEY BACK GUARANTEED</h4>
+                                        <p>It is true we love online purchase, but if a package is not well sent or is not received in desired conditions, our system guarantees a MONEY BACK TRANSFER.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- Product Slider 2 -->
+           
+                   <div class="container col-sm-8 mt-4">
+                        <h3>LATEST ON SALE</h3>
+                        <div class="slider-container">
+                            <div class="slider" id="slider">
+                                <div class="slides">
+                                    <div class="slide">
+                                        <img src="https://agarthamarket.com/wp-content/uploads/2023/10/mephedrone-4mmc-150x113.jpg" alt="RESEARCH CHEMICALS">
+                                        <span><br>4MMC Mephedrone<br>$20.00</span>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="https://agarthamarket.com/wp-content/uploads/2023/10/5abe0634645864-CL-PVP-510x426-1-150x113.jpg" alt="RESEARCH CHEMICALS">
+                                        <span><br>4-CPRC Crystal<br>$18.00</span>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="https://agarthamarket.com/wp-content/uploads/2023/10/Buy-Alpha-pvp-A-pvp-Online-150x100.jpg" alt="RESEARCH CHEMICALS">
+                                        <span><br>Alpha pvp (a-pvp)<br>$15.00</span>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="https://agarthamarket.com/wp-content/uploads/2020/12/apvp-crystals-1-150x118.jpg" alt="RESEARCH CHEMICALS">
+                                        <span>A-PVP for sale<br>$0.00-$2,100.00</span>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="https://agarthamarket.com/wp-content/uploads/2023/10/kinz-nalbuphine-1-150x214.png" alt="PAINKILLERS">
+                                        <span><br>Kinz(Nalbuphine) injections 30 vitals per package<br>$104.20-$119.80</span>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="https://agarthamarket.com/wp-content/uploads/2023/10/sibutramine-meridia-1-150x214.png" alt="WEIGHT LOSS">
+                                        <span><br>sibutramine(meridia) 98 capsules per package<br>$127.40-$175.50</span>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="https://agarthamarket.com/wp-content/uploads/2020/12/PERCOCET-5MG-Acetaminophen-150x201.jpg" alt="PAINKILLERS">
+                                        <span><br>PERCOCET-5MG(Acetaminophen)<br>$250.00-$3,200.00</span>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="https://agarthamarket.com/wp-content/uploads/2023/10/Buy-Alpha-pvp-A-pvp-Online-150x100.jpg" alt="RESEARCH CHEMICALS">
+                                        <span><br>Alpha PVP(A-PVP)<br>$15.00</span>
+                                    </div>
+                                </div>
+                                <button class="arrow arrow-prev" aria-label="Previous Slide" onclick="prevSlide('slider1')">❮</button>
+                                <button class="arrow arrow-next" aria-label="Next Slide" onclick="nextSlide('slider1')">❯</button>
+                            </div>
+                        </div>
+                    </div>
+    
+            <!-- Product Slider 3 -->
+            <div class="container col-sm-8 mt-4">
+                <h3>Weekly Featured Products</h3>
+                <div class="slider-container">
+                    <div class="slider" id="slider">
+                        <div class="slides">
+                            <div class="slide">
+                                <img src="https://agarthamarket.com/wp-content/uploads/2023/10/mephedrone-4mmc-150x113.jpg" alt="RESEARCH CHEMICALS">
+                                <span><br>4MMC Mephedrone<br>$20.00</span>
+                            </div>
+                            <div class="slide">
+                                <img src="https://agarthamarket.com/wp-content/uploads/2023/10/5abe0634645864-CL-PVP-510x426-1-150x113.jpg" alt="RESEARCH CHEMICALS">
+                                <span><br>4-CPRC Crystal<br>$18.00</span>
+                            </div>
+                            <div class="slide">
+                                <img src="https://agarthamarket.com/wp-content/uploads/2023/10/Buy-Alpha-pvp-A-pvp-Online-150x100.jpg" alt="RESEARCH CHEMICALS">
+                                <span><br>Alpha pvp (a-pvp)<br>$15.00</span>
+                            </div>
+                            <div class="slide">
+                                <img src="https://agarthamarket.com/wp-content/uploads/2020/12/apvp-crystals-1-150x118.jpg" alt="RESEARCH CHEMICALS">
+                                <span>A-PVP for sale<br>$0.00-$2,100.00</span>
+                            </div>
+                            <div class="slide">
+                                <img src="https://agarthamarket.com/wp-content/uploads/2023/10/kinz-nalbuphine-1-150x214.png" alt="PAINKILLERS">
+                                <span><br>Kinz(Nalbuphine) injections 30 vitals per package<br>$104.20-$119.80</span>
+                            </div>
+                            <div class="slide">
+                                <img src="https://agarthamarket.com/wp-content/uploads/2023/10/sibutramine-meridia-1-150x214.png" alt="WEIGHT LOSS">
+                                <span><br>sibutramine(meridia) 98 capsules per package<br>$127.40-$175.50</span>
+                            </div>
+                            <div class="slide">
+                                <img src="https://agarthamarket.com/wp-content/uploads/2020/12/PERCOCET-5MG-Acetaminophen-150x201.jpg" alt="PAINKILLERS">
+                                <span><br>PERCOCET-5MG(Acetaminophen)<br>$250.00-$3,200.00</span>
+                            </div>
+                            <div class="slide">
+                                <img src="https://agarthamarket.com/wp-content/uploads/2023/10/Buy-Alpha-pvp-A-pvp-Online-150x100.jpg" alt="RESEARCH CHEMICALS">
+                                <span><br>Alpha PVP(A-PVP)<br>$15.00</span>
+                            </div>
+                        </div>
+                        <button class="arrow arrow-prev" aria-label="Previous Slide" onclick="prevSlide('slider1')">❮</button>
+                        <button class="arrow arrow-next" aria-label="Next Slide" onclick="nextSlide('slider1')">❯</button>
+                    </div>
+                </div>
+            </div>    
+       <!-- parallax Banner -->
+       <div class="parallax-active">
+        <div class="bg" style="background-image: url('https://static.vecteezy.com/system/resources/previews/008/016/593/non_2x/white-candy-rock-sugar-or-or-crystal-sugar-in-wooden-scoop-and-glass-jar-isolated-on-wooden-background-white-rock-sugar-is-melted-and-then-allowed-to-crystallize-into-semi-translucent-gemstone-free-photo.jpg');"></div>
+        <div class="overlay"></div>
+        <div class="carousel-caption">
+            <h1>SALE ENDS SOON</h1>
+            <div class="date-time-box" id="date-time-box">
+                <div class="date-time-block" id="year">
+                    <p id="current-year">Year: ----</p>
+                </div>
+                <div class="date-time-block" id="month">
+                    <p id="current-month">Month: --</p>
+                </div>
+                <div class="date-time-block" id="day">
+                    <p id="current-day">Day: --</p>
+                </div>
+                <div class="date-time-block" id="date">
+                    <p id="current-date">Date: --</p>
+                </div>
+                <div class="date-time-block" id="hours">
+                    <p id="current-hours">Hours: --</p>
+                </div>
+                <div class="date-time-block" id="minutes">
+                    <p id="current-minutes">Minutes: --</p>
+                </div>
+                <div class="date-time-block" id="seconds">
+                    <p id="current-seconds">Seconds: --</p>
+                </div>
+            </div>
+            <a href="#" class="btn button">BROWSE NOW</a>
+        </div>
+    </div>
+
+    <!-- starting of footer -->
+    <div class="footer">
+        <div class="container-fluid text-center">
+            <div class="container">
+                 <div class="row">
+                     <div class="col-sm-12 mt-2 ">
+                        <h2>                    
+                          <p> ORDER WITH CONFIDENCE</p>
+                          <p>Agar Tha Market ensures that your order is shipped and delivered in the fastest and safest way possible.</p>
+                          <p>We deliver from China to the EU countries such as France, Germany, Netherlands, the United States of America, Canada and Australia.</p>
+                          <p>Wholesale Bulk Orders as well as retail orders are welcomed.</p>
+                          <p>We’ve set up this online medicines & chemicals shop with the overriding aim to better serve pharmacologists by accelerating discovery.</p>
+                          <p>From now on, everyone who conducts medical studies can get the needed substances ready at hand.</p>
+                          <p>Placing an online order on this website is all it takes to establish a no-middlemen supply chain with us.</p>
+                            "Contact Us: info@agarthamarket.com"
+                            </h2>
+                       </div>
+                   </div>
+               </div>
+           </div>        
+        </div>
+
+ <!-- footer -->
+ <div class="footer">
+    <div class="container-fluid text-center">
+        <div class="container d-flex flex-wrap">
+            <div class="col-sm-3 mt-4">
+                <h4><a href="latest/p1.html">Latest</a></h4>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2023/10/mephedrone-4mmc-100x100.jpg" alt="4MMC Mephedrone">
+                    <span>4MMC Mephedrone<br>$20.00</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2023/10/Caffeine-Powder-100x100.jpg" alt="Caffeine Powder">
+                    <span>Caffeine Powder<br>$20.00</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2023/10/5abe0634645864-CL-PVP-510x426-1-100x100.jpg" alt="4-CPRC Crystal">
+                    <span>4-CPRC Crystal<br>$18.00</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2023/10/Buy-Alpha-pvp-A-pvp-Online-100x100.jpg" alt="Alpha PVP (A-PVP)">
+                    <span>Alpha PVP (A-PVP)<br>$15.00</span>
+                </div>
+            </div>
+            <div class="col-sm-3 mt-4">
+                <h4><a href="BestSelling/p1.html">Best Selling</a></h4>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2021/01/1-1-600x400-1-100x100.jpg" alt="Pentobarbital-Natrium">
+                    <span>Pentobarbital-Natrium <br>(Oral and Injection)<br>$299.00 – $1,150.00</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2021/01/LSD-blotter-for-sale-Lysergic-Acid-Diethylamide-100x100.png" alt="LSD blotter for sale">
+                    <span>LSD blotter for sale<br>(Lysergic Acid Diethylamide)<br>$299.00 – $999.00</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2023/10/phendimetrazine-1-100x100.png" alt="Phendimetrazine Tartrate">
+                    <span>Phendimetrazine Tartrate<br>35 mg, 105 mg x 100 units per package<br>$126.90 – $198.40</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2023/10/kinz-nalbuphine-1-100x100.png" alt="Kinz (Nalbuphine)">
+                    <span>Kinz (Nalbuphine) injections<br>30 vials per package<br>$104.20 – $119.80</span>
+                </div>
+            </div>
+            <div class="col-sm-3 mt-4">
+                <h4><a href="featured/p1.html">Featured</a></h4>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2023/10/mephedrone-4mmc-100x100.jpg" alt="4MMC Mephedrone">
+                    <span>4MMC Mephedrone<br>$20.00</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2023/10/Caffeine-Powder-100x100.jpg" alt="Caffeine Powder">
+                    <span>Caffeine Powder<br>$20.00</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2023/10/5abe0634645864-CL-PVP-510x426-1-100x100.jpg" alt="4-CPRC Crystal">
+                    <span>4-CPRC Crystal<br>$18.00</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2023/10/Buy-Alpha-pvp-A-pvp-Online-100x100.jpg" alt="Alpha PVP (A-PVP)">
+                    <span>Alpha PVP (A-PVP)<br>$15.00</span>
+                </div>
+            </div>
+            <div class="col-sm-3 mt-4">
+                <h4><a href="toprated/p1.html">Top Rated</a></h4>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2020/12/Buy-AM-2201-online-100x100.jpg" alt="Buy AM-2201 online">
+                    <span>Buy AM-2201 online<br>$550.00 – $8,000.00</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2021/01/Buy-4-Aco-DMT-online-100x100.jpg" alt="Buy 4-Aco-DMT online">
+                    <span>Buy 4-Aco-DMT online<br>$550.00 – $4,500.00</span>
+                </div>
+                <div class="footer-item">
+                    <img src="https://agarthamarket.com/wp-content/uploads/2021/01/9d997b8278aadc0e3b371623ecb07396-1-100x100.png" alt="Nembutal">
+                    <span>Nembutal<br>$300.00 – $900.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">    
+                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#">FAQ</a>
+            
+                <div class="footer-text">
+                    &copy; 2024 <strong>Agar Tha Market Anonymous Online Drugs Store</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- banner slider scripts -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const sliderInner = document.querySelector('.slider-inner');
+    let currentIndex = 0;
+
+    function updateSlider() {
+        const slides = document.querySelectorAll('.slider-item');
+        const totalSlides = slides.length;
+        sliderInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', function() {
+        const slides = document.querySelectorAll('.slider-item');
+        const totalSlides = slides.length;
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalSlides - 1;
+        updateSlider();
+    });
+
+    nextBtn.addEventListener('click', function() {
+        const slides = document.querySelectorAll('.slider-item');
+        const totalSlides = slides.length;
+        currentIndex = (currentIndex < totalSlides - 1) ? currentIndex + 1 : 0;
+        updateSlider();
+    });
+});
+ </script>
+ <!-- sliders scripts -->
+  <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    function updateSlider(sliderId) {
+        const sliderInner = document.getElementById(sliderId).querySelector('.slides');
+        const slides = sliderInner.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const currentIndex = parseInt(sliderInner.dataset.currentIndex, 10) || 0;
+        sliderInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update button visibility
+        const prevBtn = document.querySelector(`#${sliderId} .arrow-prev`);
+        const nextBtn = document.querySelector(`#${sliderId} .arrow-next`);
+        prevBtn.style.visibility = totalSlides <= 1 ? 'hidden' : 'visible';
+        nextBtn.style.visibility = totalSlides <= 1 ? 'hidden' : 'visible';
+    }
+
+    function prevSlide(sliderId) {
+        const sliderInner = document.getElementById(sliderId).querySelector('.slides');
+        const slides = sliderInner.querySelectorAll('.slide');
+        let currentIndex = parseInt(sliderInner.dataset.currentIndex, 10) || 0;
+        const totalSlides = slides.length;
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalSlides - 1;
+        sliderInner.dataset.currentIndex = currentIndex;
+        updateSlider(sliderId);
+    }
+
+    function nextSlide(sliderId) {
+        const sliderInner = document.getElementById(sliderId).querySelector('.slides');
+        const slides = sliderInner.querySelectorAll('.slide');
+        let currentIndex = parseInt(sliderInner.dataset.currentIndex, 10) || 0;
+        const totalSlides = slides.length;
+        currentIndex = (currentIndex < totalSlides - 1) ? currentIndex + 1 : 0;
+        sliderInner.dataset.currentIndex = currentIndex;
+        updateSlider(sliderId);
+    }
+
+    // Initialize sliders
+    const sliders = document.querySelectorAll('.slider');
+    sliders.forEach(slider => {
+        const sliderId = slider.id;
+        const prevBtn = slider.querySelector('.arrow-prev');
+        const nextBtn = slider.querySelector('.arrow-next');
+
+        prevBtn.addEventListener('click', () => prevSlide(sliderId));
+        nextBtn.addEventListener('click', () => nextSlide(sliderId));
+
+        // Initialize the slider view
+        updateSlider(sliderId);
+    });
+});
+
+</script>
+<!-- date & time scripts -->
+<script>
+  function updateDateTime() {
+        const now = new Date();
+        const day = now.getDate().toString().padStart(2, '0');
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const year = now.getFullYear();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const dayName = dayNames[now.getDay()];
+        const monthName = monthNames[now.getMonth()];
+
+        document.getElementById('current-year').textContent = `Year: ${year}`;
+        document.getElementById('current-month').textContent = `Month: ${monthName}`;
+        document.getElementById('current-day').textContent = `Day: ${dayName}`;
+        document.getElementById('current-date').textContent = `Date: ${day}`;
+        document.getElementById('current-hours').textContent = `Hours: ${hours}`;
+        document.getElementById('current-minutes').textContent = `Minutes: ${minutes}`;
+        document.getElementById('current-seconds').textContent = `Seconds: ${seconds}`;
+    }
+
+    // Update date and time on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        updateDateTime();
+        setInterval(updateDateTime, 1000); // Update date and time every second
+    });
+</script>      
+</body>
+</html>

@@ -1,0 +1,52 @@
+/* External styles for improved maintainability */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.search-form input {
+    margin-right: 10px;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.slider-banner {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.slider-banner .button {
+    margin-top: 10px;
+}
+
+.banner {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.banner .button {
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+}

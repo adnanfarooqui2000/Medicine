@@ -1,0 +1,255 @@
+/* General Styling */
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: medium;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+#bg-img {
+    background-image: url('/flo.jpg');
+    background-size: cover;
+    background-position: bottom center;
+    height: 600px;
+    padding: 15px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+h4 {
+    color: #6c6565;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#list {
+    background-color: rgba(127, 125, 125, 0.36);
+    height: 100%;
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+/* Button Styles */
+.btn-rounded-pill {
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-rounded-pill:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h4 {
+        font-size: 1.5rem;
+    }
+    .btn-rounded-pill {
+        padding: 8px 16px;
+    }
+}
+
+/* Animation for Service Blocks */
+@keyframes shadowPulse {
+    0%, 100% {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.service-block {
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, color 0.3s ease;
+    animation: shadowPulse 3s infinite;
+    color: #000;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.service-block:hover {
+    color: #fff;
+    background-image: url('https://www.ultraimagehub.com/wallpapers/tr:flp-false,gx-0.5,gy-0.5,q-75,rh-3264,rw-5824,th-1080,tw-1920/1236350689228230698.jpeg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    animation: none;
+}
+
+/* Container and Section Styling */
+.container-fluid {
+    padding: 0; /* Remove padding from the container-fluid */
+    background-color: #fff;
+}
+
+.container {
+    padding: 0; /* Remove padding from the container */
+}
+
+/* Text and Image Styling */
+.text-muted {
+    color: #6c757d;
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+.side-img {
+    padding: 0; /* Remove padding from side-img */
+}
+
+.side-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styling */
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1rem; /* Adjust bottom margin */
+}
+
+h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    color: #544a4a;
+}
+
+/* Why Choose Us Boxes */
+.why-box {
+    background-color: #343a40;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+.why-box:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.why-box h5 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem; /* Adjust bottom margin */
+}
+
+.why-box p {
+    font-size: 1rem;
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+/* Remove gaps between columns */
+.row.g-4, .row.g-5 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row.g-4 > .col, .row.g-5 > .col {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .why-box {
+        margin-bottom: 1rem; /* Adjust margin for smaller screens */
+    }
+}
+
+/* Portfolio Section */
+.slider-img {
+    flex: 1 1 calc(50% - 1rem);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider-img img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.slider-img:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.slider-img:hover img {
+    transform: scale(1.05);
+}
+
+/* Button Styles */
+#btn {
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#btn:hover {
+    background-color: #444;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Section */
+.footer-bg-image {
+    background-image: url('/flo.jpg');
+    background-size: cover;
+    background-position: center bottom 450px; /* Center image in the footer */
+    color: #dadbdc;
+    padding: 40px 0;
+}
+
+.list-unstyled {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.footer-bottom {
+    background-color: none;
+    text-align: center; /* Center content */
+    padding: 20px 0;
+}
+
+.footer-bottom a {
+    color: #252525;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-bg-image {
+        background-position: top center; /* Adjust image for smaller screens */
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 10px;
+    }
+}

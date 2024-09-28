@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>.slider-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 400%; /* Adjust according to the number of slides you want visible */
+    }
+    
+    .slides {
+        display: flex;
+        width: 100%;
+    }
+    
+    .slide {
+        min-width: 25%; /* Four slides visible at a time */
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .slide img {
+        max-width: 100%;
+        height: auto;
+        animation: fadeIn 1s ease-in-out;
+    }
+    
+    .slide span {
+        display: block;
+        margin-top: 10px;
+        font-size: 16px;
+        color: #333;
+    }
+    
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+    }
+    
+    .arrow-prev {
+        left: 10px;
+    }
+    
+    .arrow-next {
+        right: 10px;
+    }
+
+    /* Bottom Footer Styling */
+    .bottom-footer {
+            background-color: #343a40; /* Dark background for the bottom footer */
+            color: #fff; /* White text color */
+            padding: 10px 0; /* Padding for top and bottom */
+            text-align: center; /* Center-align text */
+        }
+
+        .bottom-footer a {
+            color: #fff; /* White color for links */
+            margin: 0 10px; /* Space between links */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        .bottom-footer a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+
+        .bottom-footer .social-icons {
+            margin-top: 10px; /* Space above social icons */
+        }
+
+        .bottom-footer .social-icons img {
+            width: 30px; /* Set width for social icons */
+            height: 30px; /* Set height for social icons */
+            margin: 0 5px; /* Space between social icons */
+        }
+    
+    @media (max-width: 768px) {
+        .slide {
+            min-width: 100%; /* Adjust to show one slide at a time on small screens */
+        }
+        .slider {
+            width: 100%;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-12 mt-2">
+            <h3>OUR BESTSELLERS</h3>
+            <div class="slider-container">
+                <div class="slider" id="slider1">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="https://agarthamarket.com/wp-content/uploads/2021/01/1-1-600x400-1-150x223.jpg" alt="ANTI ANXIETY">
+                            <span><br>Pentobarbital-Natrium (Oral and Injection)<br>$299.00-$1,150.00</span>
+                        </div>
+                        <div class="slide">
+                            <img src="https://agarthamarket.com/wp-content/uploads/2021/01/LSD-blotter-for-sale-Lysergic-Acid-Diethylamide-150x155.png" alt="PAINKILLERS">
+                            <span><br>LSD Blotter (Lysergic Acid Diethylamide)<br>$299.00-$999.00</span>
+                        </div>
+                        <div class="slide">
+                            <img src="https://agarthamarket.com/wp-content/uploads/2023/10/phendimetrazine-1-150x214.png" alt="WEIGHT LOSS">
+                            <span><br>Phendimetrazine Tartrate 35mg, 105mg x 100 units per package<br>$126.90-$198.40</span>
+                        </div>
+                        <div class="slide">
+                            <img src="https://agarthamarket.com/wp-content/uploads/2020/12/apvp-crystals-1-150x118.jpg" alt="RESEARCH CHEMICALS">
+                            <span><br>A-PVP for sale<br>$0.00-$2,100.00</span>
+                        </div>
+                        <div class="slide">
+                            <img src="https://agarthamarket.com/wp-content/uploads/2023/10/kinz-nalbuphine-1-150x214.png" alt="PAINKILLERS">
+                            <span><br>Kinz (Nalbuphine) injections 30 vials per package<br>$104.20-$119.80</span>
+                        </div>
+                        <div class="slide">
+                            <img src="https://agarthamarket.com/wp-content/uploads/2023/10/sibutramine-meridia-1-150x214.png" alt="WEIGHT LOSS">
+                            <span><br>Sibutramine (Meridia) 98 capsules per package<br>$127.40-$175.50</span>
+                        </div>
+                        <div class="slide">
+                            <img src="https://agarthamarket.com/wp-content/uploads/2020/12/PERCOCET-5MG-Acetaminophen-150x201.jpg" alt="PAINKILLERS">
+                            <span><br>PERCOCET 5MG (Acetaminophen)<br>$250.00-$3,200.00</span>
+                        </div>
+                        <div class="slide">
+                            <img src="https://agarthamarket.com/wp-content/uploads/2023/10/Buy-Alpha-pvp-A-pvp-Online-150x100.jpg" alt="RESEARCH CHEMICALS">
+                            <span><br>Alpha PVP (A-PVP)<br>$15.00</span>
+                        </div>
+                    </div>
+                    <button class="arrow arrow-prev" onclick="prevSlide('slider1')">❮</button>
+                    <button class="arrow arrow-next" onclick="nextSlide('slider1')">❯</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentSlide = 0;
+
+function showSlide(sliderId, index) {
+    const slider = document.getElementById(sliderId);
+    const slides = slider.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const visibleSlides = 4; // Number of slides visible at a time
+
+    if (index >= totalSlides / visibleSlides) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = Math.floor(totalSlides / visibleSlides) - 1;
+    } else {
+        currentSlide = index;
+    }
+
+    const transformValue = `translateX(-${currentSlide * (100 / visibleSlides)}%)`;
+    slider.querySelector('.slides').style.transform = transformValue;
+}
+
+function nextSlide(sliderId) {
+    showSlide(sliderId, currentSlide + 1);
+}
+
+function prevSlide(sliderId) {
+    showSlide(sliderId, currentSlide - 1);
+}
+
+// Optional: Auto-slide functionality
+setInterval(() => {
+    nextSlide('slider1');
+}, 5000); // Change slide every 5 seconds
+
+// Initial setup
+document.addEventListener('DOMContentLoaded', () => {
+    showSlide('slider1', 0);
+});
+
+    </script>
+        
+</body>
+</html>
